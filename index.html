@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruoshui Liu - Motion Graphics Portfolio</title>
+    <title>Your Name - Motion Graphics Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,7 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #26e9e0;
+            background: #0a0a0a;
             overflow-x: hidden;
         }
 
@@ -73,7 +73,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #26e95b 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
             overflow: hidden;
         }
@@ -200,10 +200,59 @@
             opacity: 1;
         }
 
-        .play-icon {
+        .vimeo-icon {
             font-size: 3rem;
             color: white;
             text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 107, 107, 0.8);
         }
 
         .media-caption {
@@ -230,7 +279,7 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
@@ -241,6 +290,7 @@
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .gallery-item:hover {
@@ -249,7 +299,8 @@
 
         .gallery-item img {
             width: 100%;
-            height: 250px;
+            height: auto;
+            min-height: 200px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
@@ -272,6 +323,19 @@
 
         .gallery-item:hover .gallery-caption {
             transform: translateY(0);
+        }
+
+        /* Different aspect ratios for variety */
+        .gallery-item:nth-child(3n+1) img {
+            height: 250px;
+        }
+        
+        .gallery-item:nth-child(3n+2) img {
+            height: 300px;
+        }
+        
+        .gallery-item:nth-child(3n+3) img {
+            height: 200px;
         }
 
         /* Footer */
@@ -366,7 +430,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Ruoshui Liu</h1>
+            <h1>Your Name</h1>
             <p>Motion Graphics Designer & Visual Artist</p>
         </div>
         <div class="scroll-indicator">
@@ -378,43 +442,45 @@
     <section id="motion-graphics" class="section motion-graphics">
         <h2>Motion Graphics</h2>
         <div class="media-grid">
-            <!-- Video Item 1 -->
-            <div class="media-item" onclick="openVideo('https://vimeo.com/1037771316')">
-                <video muted loop>
-                    <source src="https://cdn.discordapp.com/attachments/1099427679905779854/1396197194159231047/My_Stop_Motion_Movie_2.mov?ex=687d3577&is=687be3f7&hm=4ff7a4420419676c683484b8bdf2ef728ef9d4d6d61e8749dd2823009581adc6&" type="video/mp4">
-                </video>
+            <!-- GIF Item 1 - Links to Vimeo -->
+            <div class="media-item" onclick="openVimeoPage('https://vimeo.com/your-video-1')">
+                <img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Motion Graphics GIF">
                 <div class="media-overlay">
-                    <div class="play-icon">▶</div>
+                    <div class="vimeo-icon">▶</div>
                 </div>
                 <div class="media-caption">
                     Brand Animation - Nike Campaign
                 </div>
             </div>
 
-            <!-- GIF Item 1 -->
-            <div class="media-item">
-                <img src="file:///Users/ruoshuiliu/Desktop/24f/extreme.gif" alt="Motion Graphics GIF">
+            <!-- GIF Item 2 - Links to Vimeo -->
+            <div class="media-item" onclick="openVimeoPage('https://vimeo.com/your-video-2')">
+                <img src="https://media.giphy.com/media/l2JhpjWPccQhsAMfu/giphy.gif" alt="Motion Graphics GIF">
+                <div class="media-overlay">
+                    <div class="vimeo-icon">▶</div>
+                </div>
                 <div class="media-caption">
                     Logo Animation - Tech Startup
                 </div>
             </div>
 
-            <!-- Video Item 2 -->
-            <div class="media-item" onclick="openVideo('https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4')">
-                <video muted loop>
-                    <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4" type="video/mp4">
-                </video>
+            <!-- GIF Item 3 - Links to Vimeo -->
+            <div class="media-item" onclick="openVimeoPage('https://vimeo.com/your-video-3')">
+                <img src="https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif" alt="Motion Graphics GIF">
                 <div class="media-overlay">
-                    <div class="play-icon">▶</div>
+                    <div class="vimeo-icon">▶</div>
                 </div>
                 <div class="media-caption">
                     Product Showcase - Apple Style
                 </div>
             </div>
 
-            <!-- GIF Item 2 -->
-            <div class="media-item">
-                <img src="https://media.giphy.com/media/l2JhpjWPccQhsAMfu/giphy.gif" alt="Motion Graphics GIF">
+            <!-- GIF Item 4 - Links to Vimeo -->
+            <div class="media-item" onclick="openVimeoPage('https://vimeo.com/your-video-4')">
+                <img src="https://media.giphy.com/media/26BRrSvJUa0crqw4E/giphy.gif" alt="Motion Graphics GIF">
+                <div class="media-overlay">
+                    <div class="vimeo-icon">▶</div>
+                </div>
                 <div class="media-caption">
                     UI/UX Animation - Mobile App
                 </div>
@@ -427,7 +493,7 @@
         <h2>Photography</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="https://cdn.discordapp.com/attachments/1099427679905779854/1395970339632189580/86_copy.jpg?ex=687c6230&is=687b10b0&hm=1de2cb2d4b99a338fa1bda1cc7b694471760e0bff492a82f7e748a4c02aa9270&" alt="Landscape Photography">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Landscape Photography">
                 <div class="gallery-caption">Mountain Landscape - Iceland</div>
             </div>
             <div class="gallery-item">
@@ -457,33 +523,35 @@
     <section id="illustration" class="section image-gallery">
         <h2>Illustration</h2>
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://cdn.discordapp.com/attachments/1099427679905779854/1395970339632189580/86_copy.jpg?ex=687c6230&is=687b10b0&hm=1de2cb2d4b99a338fa1bda1cc7b694471760e0bff492a82f7e748a4c02aa9270&" alt="Digital Illustration">
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')">
+                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Digital Illustration">
                 <div class="gallery-caption">Digital Portrait - Character Design</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://cdn.discordapp.com/attachments/1099427679905779854/1395973788973404242/ea6c18310589d603.jpg?ex=687c6567&is=687b13e7&hm=0d19d165ea5f1dd58298788174cde0e9f1c4d06721e0a68541087c8e8e2405cf&" alt="Abstract Art">
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')">
+                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Abstract Art">
                 <div class="gallery-caption">Abstract Composition - Digital Art</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://cdn.discordapp.com/attachments/1099427679905779854/1395973993806430289/b78752ae88be6296.JPG?ex=687c6598&is=687b1418&hm=e27b37ae0bea3c844abe06b36f4c6f2d4a80ef645c2d4310a9f0e99000745b2d&" alt="Concept Art">
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1547891654-e66ed7ebb968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')">
+                <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Concept Art">
                 <div class="gallery-caption">Concept Art - Sci-Fi Environment</div>
             </div>
-            <div class="gallery-item">
-                <img src="https://cdn.discordapp.com/attachments/1099427679905779854/1395969844377292900/86_copy_3.jpg?ex=687c61ba&is=687b103a&hm=f5c3e824ef027ea9646c9158fba554cfec9fa2a1ee35f84a281126171cfc877f&" alt="Traditional Art">
-                <div class="gallery-caption">Traditional Painting - Watercolor</div>
-            </div>
-             <div class="gallery-item">
-                <img src="https://cdn.discordapp.com/attachments/1099427679905779854/1395974191471263907/5f97ca2c7c6a901e.JPG?ex=687c65c7&is=687b1447&hm=a92b56bad181c285d6b0d3c4d12f881daf3e5ff1ded1764b900814768bbf09d5&" alt="Traditional Art">
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')">
+                <img src="https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Traditional Art">
                 <div class="gallery-caption">Traditional Painting - Watercolor</div>
             </div>
         </div>
     </section>
 
+    <!-- Lightbox for full-size images -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <img id="lightbox-image" src="" alt="">
+    </div>
+
     <!-- Footer -->
     <footer id="contact">
         <div class="contact-info">
-            <a href="mailto:cylos404@gmail.com">Email</a>
+            <a href="mailto:your.email@example.com">Email</a>
             <a href="#">LinkedIn</a>
             <a href="#">Instagram</a>
             <a href="#">Behance</a>
@@ -515,10 +583,32 @@
             });
         });
 
-        // Function to open video in new tab
-        function openVideo(videoUrl) {
-            window.open(videoUrl, '_blank');
+        // Function to open Vimeo page in new tab
+        function openVimeoPage(vimeoUrl) {
+            window.open(vimeoUrl, '_blank');
         }
+
+        // Lightbox functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            lightboxImage.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
 
         // Intersection Observer for scroll animations
         const observerOptions = {
