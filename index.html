@@ -150,9 +150,10 @@
 
         .media-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
+            align-items: start;
         }
 
         .media-item {
@@ -161,7 +162,7 @@
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            background: #000;
         }
 
         .media-item:hover {
@@ -169,16 +170,19 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        .media-item img,
-        .media-item video {
+        /* Clickable items get cursor pointer */
+        .media-item.clickable {
+            cursor: pointer;
+        }
+
+        .media-item img {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
+            height: auto;
+            display: block;
             transition: transform 0.3s ease;
         }
 
-        .media-item:hover img,
-        .media-item:hover video {
+        .media-item:hover img {
             transform: scale(1.05);
         }
 
@@ -196,7 +200,8 @@
             justify-content: center;
         }
 
-        .media-item:hover .media-overlay {
+        /* Only show overlay on clickable items */
+        .media-item.clickable:hover .media-overlay {
             opacity: 1;
         }
 
@@ -442,47 +447,60 @@
     <section id="motion-graphics" class="section motion-graphics">
         <h2>Motion Graphics</h2>
         <div class="media-grid">
-            <!-- GIF Item 1 - Links to Vimeo -->
-            <div class="media-item" onclick="openVimeoPage('https://vimeo.com/your-video-1')">
-                <img src="file:///Users/ruoshuiliu/Desktop/24f/motion%20g/week5_AME/C.gif" alt="Motion Graphics GIF">
+            <!-- Clickable GIF 1 - Links to Vimeo -->
+            <div class="media-item clickable" onclick="openVimeoPage('https://vimeo.com/your-video-1')">
+                <img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Motion Graphics GIF">
                 <div class="media-overlay">
                     <div class="vimeo-icon">▶</div>
                 </div>
                 <div class="media-caption">
-                    Logo Animation - CYLOS
+                    Logo Animation - CYLOS (Click to watch full video)
                 </div>
             </div>
 
-            <!-- GIF Item 2 - Links to Vimeo -->
-            <div class="media-item" onclick="openVimeoPage('https://vimeo.com/your-video-2')">
+            <!-- Non-clickable GIF 1 -->
+            <div class="media-item">
                 <img src="https://media.giphy.com/media/l2JhpjWPccQhsAMfu/giphy.gif" alt="Motion Graphics GIF">
-                <div class="media-overlay">
-                    <div class="vimeo-icon">▶</div>
-                </div>
                 <div class="media-caption">
-                    Logo Animation - Tech Startup
+                    UI Animation Study
                 </div>
             </div>
 
-            <!-- GIF Item 3 - Links to Vimeo -->
-            <div class="media-item" onclick="openVimeoPage('https://vimeo.com/your-video-3')">
+            <!-- Clickable GIF 2 - Links to Vimeo -->
+            <div class="media-item clickable" onclick="openVimeoPage('https://vimeo.com/your-video-2')">
                 <img src="https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif" alt="Motion Graphics GIF">
                 <div class="media-overlay">
                     <div class="vimeo-icon">▶</div>
                 </div>
                 <div class="media-caption">
-                    Product Showcase - Apple Style
+                    Product Showcase (Click to watch full video)
                 </div>
             </div>
 
-            <!-- GIF Item 4 - Links to Vimeo -->
-            <div class="media-item" onclick="openVimeoPage('https://vimeo.com/your-video-4')">
+            <!-- Non-clickable GIF 2 -->
+            <div class="media-item">
                 <img src="https://media.giphy.com/media/26BRrSvJUa0crqw4E/giphy.gif" alt="Motion Graphics GIF">
+                <div class="media-caption">
+                    Typography Animation
+                </div>
+            </div>
+
+            <!-- Clickable GIF 3 - Links to Vimeo -->
+            <div class="media-item clickable" onclick="openVimeoPage('https://vimeo.com/your-video-3')">
+                <img src="https://media.giphy.com/media/26BRBKqUiq586bRVm/giphy.gif" alt="Motion Graphics GIF">
                 <div class="media-overlay">
                     <div class="vimeo-icon">▶</div>
                 </div>
                 <div class="media-caption">
-                    UI/UX Animation - Mobile App
+                    Brand Identity Animation (Click to watch full video)
+                </div>
+            </div>
+
+            <!-- Non-clickable GIF 3 -->
+            <div class="media-item">
+                <img src="https://media.giphy.com/media/3oriO13KTkzPwTykp2/giphy.gif" alt="Motion Graphics GIF">
+                <div class="media-caption">
+                    Loading Animation Concept
                 </div>
             </div>
         </div>
@@ -556,7 +574,7 @@
             <a href="#">Instagram</a>
             <a href="#">Behance</a>
         </div>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Ruoshui Liu. All rights reserved.</p>
     </footer>
 
     <script>
@@ -569,17 +587,6 @@
                     behavior: 'smooth',
                     block: 'start'
                 });
-            });
-        });
-
-        // Video hover effects
-        document.querySelectorAll('video').forEach(video => {
-            video.addEventListener('mouseenter', () => {
-                video.play();
-            });
-            
-            video.addEventListener('mouseleave', () => {
-                video.pause();
             });
         });
 
