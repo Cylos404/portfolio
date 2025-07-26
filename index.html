@@ -284,7 +284,7 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
@@ -305,8 +305,6 @@
         .gallery-item img {
             width: 100%;
             height: auto;
-/*             min-height: 200px; */
-/*             object-fit: cover; */
             transition: transform 0.3s ease;
         }
 
@@ -321,7 +319,7 @@
             right: 0;
             background: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 1rem;
+/*             padding: 1rem; */
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
@@ -330,18 +328,6 @@
             transform: translateY(0);
         }
 
-        /* Different aspect ratios for variety */
-/*         .gallery-item:nth-child(3n+1) img {
-            height: 250px;
-        }
-        
-        .gallery-item:nth-child(3n+2) img {
-          
-        }
-        
-        .gallery-item:nth-child(3n+3) img {
-            height: 200px;
-        } */
 
 .gallery-item:nth-child(3n+1) img,
 .gallery-item:nth-child(3n+2) img,
