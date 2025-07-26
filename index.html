@@ -282,12 +282,24 @@
             background: #0a0a0a;
         }
 
-        .gallery-grid {
+/*         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
+ */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0; /* optional: set to 0 for seamless rows */
+}
+
+.gallery-item {
+    aspect-ratio: 4 / 3;
+    margin: 0;
+}
 
 /*         .gallery-item {
             position: relative;
