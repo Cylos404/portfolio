@@ -331,8 +331,8 @@
         }
 
         /* Different aspect ratios for variety */
-        .gallery-item:nth-child(3n+1) img {
-/*             height: 250px; */
+/*         .gallery-item:nth-child(3n+1) img {
+            height: 250px;
         }
         
         .gallery-item:nth-child(3n+2) img {
@@ -340,8 +340,14 @@
         }
         
         .gallery-item:nth-child(3n+3) img {
-/*             height: 200px; */
-        }
+            height: 200px;
+        } */
+
+.gallery-item:nth-child(3n+1) img,
+.gallery-item:nth-child(3n+2) img,
+.gallery-item:nth-child(3n+3) img {
+    height: auto;
+}
 
         /* Footer */
         footer {
