@@ -282,157 +282,59 @@
             background: #0a0a0a;
         }
 
-        .image-gallery {
-            background: #0a0a0a;
-            padding: 2rem;
-        }
+.image-gallery {
+    background: #0a0a0a;
+    padding: 2rem;
+}
 
-        .gallery-grid {
-            column-count: 3;
-            column-gap: 1.5rem;
-        }
+.gallery-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+}
 
-        .gallery-item {
-            break-inside: avoid;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            position: relative;
-        }
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
 
-        .gallery-item img {
-            width: 100%;
-            height: auto; /* preserve aspect ratio */
-            display: block;
-            border-radius: inherit;
-            transition: transform 0.3s ease;
-        }
+.gallery-item img {
+    width: 100%;
+    height: auto; /* preserve aspect ratio */
+    display: block;
+    border-radius: inherit;
+    transition: transform 0.3s ease;
+}
 
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
+.gallery-item:hover {
+    transform: scale(1.02);
+}
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
 
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 1rem;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
 
-        .gallery-item:hover .gallery-caption {
-            transform: translateY(0);
-        }
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
 
-        /* Horizontal Scrollable Poster Section */
-        .poster-section {
-            background: #0a0a0a;
-            padding: 5rem 0;
-            overflow: hidden;
-        }
-
-        .poster-section h2 {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #fff;
-            position: relative;
-            padding: 0 2rem;
-        }
-
-        .poster-section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: #ff6b6b;
-        }
-
-        .horizontal-scroll-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .horizontal-scroll-wrapper {
-            display: flex;
-            animation: infiniteScroll 30s linear infinite;
-            width: max-content;
-        }
-
-        .horizontal-scroll-wrapper:hover {
-            animation-play-state: paused;
-        }
-
-        .poster-item {
-            flex-shrink: 0;
-            width: 350px;
-            height: 500px;
-            margin-right: 2rem;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease;
-            position: relative;
-            background: #111;
-        }
-
-        .poster-item:hover {
-            transform: scale(1.05);
-        }
-
-        .poster-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .poster-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .poster-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-            color: white;
-            padding: 2rem 1rem 1rem;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .poster-item:hover .poster-caption {
-            transform: translateY(0);
-        }
-
-        @keyframes infiniteScroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
 
         /* Footer */
         footer {
@@ -508,15 +410,6 @@
                 flex-direction: column;
                 gap: 1rem;
             }
-
-            .poster-item {
-                width: 280px;
-                height: 400px;
-            }
-
-            .horizontal-scroll-wrapper {
-                animation-duration: 25s;
-            }
         }
     </style>
 </head>
@@ -588,6 +481,7 @@
                     Lyrics Video
                 </div>
             </div>
+
 
             
             <!-- Non-clickable GIF 2 -->
@@ -693,7 +587,7 @@
                 <img src="https://github.com/Cylos404/portfolio/blob/main/Y.JPG?raw=true" alt="Digital">
                 <div class="gallery-caption">No Night in Blue II</div>
             </div>
-            <div class="gallery-item" onclick="openLightbox('https://github.com/Cylos-404/portfolio/blob/main/W.jpg?raw=true')">
+            <div class="gallery-item" onclick="openLightbox('https://github.com/Cylos404/portfolio/blob/main/W.jpg?raw=true')">
                 <img src="https://github.com/Cylos404/portfolio/blob/main/W.jpg?raw=true" alt="Digital">
                 <div class="gallery-caption">The Annunciation</div>
             </div>
@@ -757,3 +651,128 @@
             </div>
             
         </div>
+    </section>
+
+     <!-- Poster Section -->
+    <section id="poster" class="section image-gallery">
+        <h2>Poster</h2>
+        <div class="gallery-grid">
+            
+            <div class="gallery-item">
+                <img src="https://github.com/Cylos404/portfolio/blob/main/poster2.jpg?raw=true" alt="Character Poster">
+                <div class="gallery-caption">Character</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://github.com/Cylos404/portfolio/blob/main/poster6.png?raw=true" alt="Character Poster">
+                <div class="gallery-caption">Word</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://github.com/Cylos404/portfolio/blob/main/poster5.png?raw=true" alt="Character Poster">
+                <div class="gallery-caption">Sentence</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://github.com/Cylos404/portfolio/blob/main/poster3.png?raw=true" alt="Character Poster">
+                <div class="gallery-caption">Paragraph</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://github.com/Cylos404/portfolio/blob/main/poster4.png?raw=true" alt="Character Poster">
+                <div class="gallery-caption">Page</div>
+            </div>
+
+
+            
+        </div>
+    </section>
+
+    <!-- Lightbox for full-size images -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <img id="lightbox-image" src="" alt="">
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="contact-info">
+            <a href="mailto:cylos404@gmail.com">Email</a>
+<!--             <a href="#">LinkedIn</a> -->
+            <a href="#">Instagram</a>
+            <a href="#">Behance</a>
+        </div>
+        <p>&copy; 2025 Ruoshui Liu. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Function to open Vimeo page in new tab
+        function openVimeoPage(vimeoUrl) {
+            window.open(vimeoUrl, '_blank');
+        }
+
+        // Lightbox functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            lightboxImage.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe gallery items for scroll animations
+        document.querySelectorAll('.gallery-item, .media-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>
