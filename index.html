@@ -981,7 +981,7 @@ function createFirework(x, y) {
         document.body.appendChild(particle);
         
         const angle = (i / 12) * Math.PI * 2;
-        const distance = 100 + Math.random() * 50;
+        const distance = 100 + Math.random() * 150;
         
         particle.style.left = x + 'px';
         particle.style.top = y + 'px';
@@ -991,7 +991,7 @@ function createFirework(x, y) {
             particle.style.opacity = '0';
         }, 10);
         
-        setTimeout(() => particle.remove(), 1000);
+        setTimeout(() => particle.remove(), 2000);
     }
 }
 
