@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +75,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: black;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
             overflow: hidden;
         }
@@ -415,33 +416,6 @@
                 gap: 1rem;
             }
         }
-
-
-        .firework-particle {
-    position: fixed;
-    width: 4px;
-    height: 4px;
-    background: #ff6b6b;
-    border-radius: 50%;
-    transition: all 1s ease-out;
-    pointer-events: none;
-    z-index: 1000;
-}
-
-.light-trail {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: fadeOut 0.5s ease-out forwards;
-    z-index: 999;
-}
-
-@keyframes fadeOut {
-    to { opacity: 0; transform: scale(2); }
-}
     </style>
 </head>
 <body>
@@ -458,7 +432,6 @@
     </nav>
 
     <!-- Hero Section -->
-  
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Ruoshui Liu</h1>
@@ -1165,104 +1138,6 @@ document.addEventListener('DOMContentLoaded', initPosterCarousel);
                 nav.style.background = 'rgba(0, 0, 0, 0.9)';
             }
         });
-
-
-        hero.addEventListener('click', function(e) {
-    createFirework(e.clientX, e.clientY);
-});
-
-
-<script>
-// Wait for the page to fully load
-document.addEventListener('DOMContentLoaded', function() {
-    const hero = document.querySelector('.hero');
-    console.log('Hero element found:', hero); // Debug line
-    
-    if (hero) {
-        // Firework click effect
-        hero.addEventListener('click', function(e) {
-            console.log('Click detected!'); // Debug line
-            createFirework(e.clientX, e.clientY);
-        });
-        
-        // Light trail mouse effect
-        hero.addEventListener('mousemove', function(e) {
-            createLightTrail(e.clientX, e.clientY);
-        });
-    } else {
-        console.log('Hero element not found!');
-    }
-});
-
-function createFirework(x, y) {
-    console.log('Creating firework at:', x, y); // Debug line
-    for (let i = 0; i < 12; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'firework-particle';
-        document.body.appendChild(particle);
-        
-        const angle = (i / 12) * Math.PI * 2;
-        const distance = 100 + Math.random() * 50;
-        
-        particle.style.left = x + 'px';
-        particle.style.top = y + 'px';
-        
-        setTimeout(() => {
-            particle.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
-            particle.style.opacity = '0';
-        }, 10);
-        
-        setTimeout(() => particle.remove(), 1000);
-    }
-}
-
-function createLightTrail(x, y) {
-    const light = document.createElement('div');
-    light.className = 'light-trail';
-    document.body.appendChild(light);
-    
-    light.style.left = x + 'px';
-    light.style.top = y + 'px';
-    
-    setTimeout(() => light.remove(), 500);
-}
-</script>
-function createFirework(x, y) {
-    // Create multiple particles that shoot out in all directions
-    for (let i = 0; i < 12; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'firework-particle';
-        document.body.appendChild(particle);
-        
-        const angle = (i / 12) * Math.PI * 2;
-        const distance = 100 + Math.random() * 50;
-        
-        particle.style.left = x + 'px';
-        particle.style.top = y + 'px';
-        
-        setTimeout(() => {
-            particle.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
-            particle.style.opacity = '0';
-        }, 10);
-        
-        setTimeout(() => particle.remove(), 1000);
-    }
-}
-
-        hero.addEventListener('mousemove', function(e) {
-    createLightTrail(e.clientX, e.clientY);
-});
-
-function createLightTrail(x, y) {
-    const light = document.createElement('div');
-    light.className = 'light-trail';
-    document.body.appendChild(light);
-    
-    light.style.left = x + 'px';
-    light.style.top = y + 'px';
-    
-    setTimeout(() => light.remove(), 500);
-}
     </script>
 </body>
 </html>
