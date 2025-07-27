@@ -414,34 +414,7 @@
                 gap: 1rem;
             }
         }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-<!--             <li><a href="#home">Home</a></li> -->
-            
-            <li><a href="#illustration">Illustration</a></li>
-            <li><a href="#motion-graphics">Motion Graphics</a></li>
-            <li><a href="#poster">Poster</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Ruoshui Liu</h1>
-            <p>Graphic Designer & Visual Artist</p>
-        </div>
-        <div class="scroll-indicator">
-            <div>↓</div>
-        </div>
-    </section>
-
-    <style>
-
+   
 .firework-particle {
     position: fixed;
     width: 4px;
@@ -468,53 +441,32 @@
     to { opacity: 0; transform: scale(2); }
 }
 </style>
-
-    <script>
-const hero = document.querySelector('.hero');
-if (hero) {
-    // Firework click effect
-    hero.addEventListener('click', function(e) {
-        createFirework(e.clientX, e.clientY);
-    });
     
-    // Light trail mouse effect
-    hero.addEventListener('mousemove', function(e) {
-        createLightTrail(e.clientX, e.clientY);
-    });
-}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+<!--             <li><a href="#home">Home</a></li> -->
+            
+            <li><a href="#illustration">Illustration</a></li>
+            <li><a href="#motion-graphics">Motion Graphics</a></li>
+            <li><a href="#poster">Poster</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-function createFirework(x, y) {
-    for (let i = 0; i < 12; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'firework-particle';
-        document.body.appendChild(particle);
-        
-        const angle = (i / 12) * Math.PI * 2;
-        const distance = 100 + Math.random() * 50;
-        
-        particle.style.left = x + 'px';
-        particle.style.top = y + 'px';
-        
-        setTimeout(() => {
-            particle.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
-            particle.style.opacity = '0';
-        }, 10);
-        
-        setTimeout(() => particle.remove(), 1000);
-    }
-}
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Ruoshui Liu</h1>
+            <p>Graphic Designer & Visual Artist</p>
+        </div>
+        <div class="scroll-indicator">
+            <div>↓</div>
+        </div>
+    </section>
 
-function createLightTrail(x, y) {
-    const light = document.createElement('div');
-    light.className = 'light-trail';
-    document.body.appendChild(light);
-    
-    light.style.left = x + 'px';
-    light.style.top = y + 'px';
-    
-    setTimeout(() => light.remove(), 500);
-}
-</script>
 
 
    
@@ -1212,5 +1164,53 @@ document.addEventListener('DOMContentLoaded', initPosterCarousel);
             }
         });
     </script>
+
+
+    <script>
+const hero = document.querySelector('.hero');
+if (hero) {
+    // Firework click effect
+    hero.addEventListener('click', function(e) {
+        createFirework(e.clientX, e.clientY);
+    });
+    
+    // Light trail mouse effect
+    hero.addEventListener('mousemove', function(e) {
+        createLightTrail(e.clientX, e.clientY);
+    });
+}
+
+function createFirework(x, y) {
+    for (let i = 0; i < 12; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'firework-particle';
+        document.body.appendChild(particle);
+        
+        const angle = (i / 12) * Math.PI * 2;
+        const distance = 100 + Math.random() * 50;
+        
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        
+        setTimeout(() => {
+            particle.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
+            particle.style.opacity = '0';
+        }, 10);
+        
+        setTimeout(() => particle.remove(), 1000);
+    }
+}
+
+function createLightTrail(x, y) {
+    const light = document.createElement('div');
+    light.className = 'light-trail';
+    document.body.appendChild(light);
+    
+    light.style.left = x + 'px';
+    light.style.top = y + 'px';
+    
+    setTimeout(() => light.remove(), 500);
+}
+</script>
 </body>
 </html>
