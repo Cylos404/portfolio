@@ -653,7 +653,7 @@
         </div>
     </section>
 
-     <!-- Poster Section -->
+<!--      <!-- Poster Section -->
     <section id="poster" class="section image-gallery">
         <h2>Poster</h2>
         <div class="gallery-grid">
@@ -682,7 +682,157 @@
 
             
         </div>
-    </section>
+    </section> -->
+
+
+    <style>
+/* Horizontal Scrollable Poster Section */
+.poster-section {
+    background: #0a0a0a;
+    padding: 5rem 0;
+    overflow: hidden;
+}
+
+.poster-section h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #fff;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.poster-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #ff6b6b;
+}
+
+.horizontal-scroll-container {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2rem 0;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 4px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background: #ff6b6b;
+    border-radius: 4px;
+}
+
+.horizontal-scroll-wrapper {
+    display: flex;
+    gap: 2rem;
+    padding: 0 2rem;
+    width: max-content;
+}
+
+.poster-item {
+    flex-shrink: 0;
+    width: 350px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    position: relative;
+    background: #111;
+}
+
+.poster-item:hover {
+    transform: scale(1.05);
+}
+
+.poster-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.poster-item:hover img {
+    transform: scale(1.1);
+}
+
+.poster-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    padding: 2rem 1rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.poster-item:hover .poster-caption {
+    transform: translateY(0);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .poster-item {
+        width: 280px;
+        height: 400px;
+    }
+}
+</style>
+
+<!-- Add this HTML section after your illustration section -->
+<section id="poster" class="poster-section">
+    <h2>Poster</h2>
+    <div class="horizontal-scroll-container">
+        <div class="horizontal-scroll-wrapper">
+            
+            <div class="poster-item">
+                <img src="https://github.com/Cylos404/portfolio/blob/main/poster2.jpg?raw=true" alt="Character Poster">
+                <div class="poster-caption">Character</div>
+            </div>
+            
+            <div class="poster-item">
+                <img src="https://github.com/Cylos404/portfolio/blob/main/poster6.png?raw=true" alt="Word Poster">
+                <div class="poster-caption">Word</div>
+            </div>
+            
+            <div class="poster-item">
+                <img src="https://github.com/Cylos404/portfolio/blob/main/poster5.png?raw=true" alt="Sentence Poster">
+                <div class="poster-caption">Sentence</div>
+            </div>
+            
+            <div class="poster-item">
+                <img src="https://github.com/Cylos404/portfolio/blob/main/poster3.png?raw=true" alt="Paragraph Poster">
+                <div class="poster-caption">Paragraph</div>
+            </div>
+            
+            <div class="poster-item">
+                <img src="https://github.com/Cylos404/portfolio/blob/main/poster4.png?raw=true" alt="Page Poster">
+                <div class="poster-caption">Page</div>
+            </div>
+
+            <!-- Add more poster items here -->
+            
+        </div>
+    </div>
+</section>
 
     <!-- Lightbox for full-size images -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
