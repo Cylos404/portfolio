@@ -74,7 +74,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: black;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
             overflow: hidden;
         }
@@ -94,6 +94,7 @@
             z-index: 2;
             color: white;
         }
+
 
 
         
@@ -415,10 +416,8 @@
             }
         }
 
-</style>
-    <style>
-        
-.firework-particle {
+
+        .firework-particle {
     position: fixed;
     width: 4px;
     height: 4px;
@@ -443,8 +442,7 @@
 @keyframes fadeOut {
     to { opacity: 0; transform: scale(2); }
 }
-</style>
-    
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -1166,24 +1164,14 @@ document.addEventListener('DOMContentLoaded', initPosterCarousel);
                 nav.style.background = 'rgba(0, 0, 0, 0.9)';
             }
         });
-    </script>
 
 
-    <script>
-const hero = document.querySelector('.hero');
-if (hero) {
-    // Firework click effect
-    hero.addEventListener('click', function(e) {
-        createFirework(e.clientX, e.clientY);
-    });
-    
-    // Light trail mouse effect
-    hero.addEventListener('mousemove', function(e) {
-        createLightTrail(e.clientX, e.clientY);
-    });
-}
+        hero.addEventListener('click', function(e) {
+    createFirework(e.clientX, e.clientY);
+});
 
 function createFirework(x, y) {
+    // Create multiple particles that shoot out in all directions
     for (let i = 0; i < 12; i++) {
         const particle = document.createElement('div');
         particle.className = 'firework-particle';
@@ -1204,6 +1192,10 @@ function createFirework(x, y) {
     }
 }
 
+        hero.addEventListener('mousemove', function(e) {
+    createLightTrail(e.clientX, e.clientY);
+});
+
 function createLightTrail(x, y) {
     const light = document.createElement('div');
     light.className = 'light-trail';
@@ -1214,6 +1206,6 @@ function createLightTrail(x, y) {
     
     setTimeout(() => light.remove(), 500);
 }
-</script>
+    </script>
 </body>
 </html>
