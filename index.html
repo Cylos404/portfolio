@@ -1260,7 +1260,7 @@ document.addEventListener('DOMContentLoaded', initPosterCarousel);
         particle.className = 'particle';
         
         // Random size and position
-        const size = Math.random() * 100 + 50;
+        const size = Math.random() * 200 + 50;
         particle.style.width = size + 'px';
         particle.style.height = size + 'px';
         particle.style.left = Math.random() * 100 + '%';
@@ -1286,7 +1286,7 @@ function createRipple(e) {
     
     // Position the ripple
     ripple.style.left = (x) + 'px';
-    ripple.style.top = (y - 200) + 'px';
+    ripple.style.top = (y) + 'px';
     
     hero.appendChild(ripple);
     
@@ -1294,8 +1294,8 @@ function createRipple(e) {
     const splash = document.createElement('div');
     const splashClass = 'splash-' + (Math.floor(Math.random() * 5) + 1);
     splash.className = `color-splash ${splashClass}`;
-    splash.style.left = (x - 100) + 'px';
-    splash.style.top = (y - 100) + 'px';
+    splash.style.left = (x) + 'px';
+    splash.style.top = (y) + 'px';
     
     hero.appendChild(splash);
     
@@ -1325,7 +1325,7 @@ function createRipple(e) {
         });
     }
     
-    // ... keep your existing DOMContentLoaded code here ...
+   
 });
     </script>
     
