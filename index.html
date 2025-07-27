@@ -653,44 +653,17 @@
         </div>
     </section>
 
-<!--      <!-- Poster Section -->
-    <section id="poster" class="section image-gallery">
-        <h2>Poster</h2>
-        <div class="gallery-grid">
-            
-            <div class="gallery-item">
-                <img src="https://github.com/Cylos404/portfolio/blob/main/poster2.jpg?raw=true" alt="Character Poster">
-                <div class="gallery-caption">Character</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://github.com/Cylos404/portfolio/blob/main/poster6.png?raw=true" alt="Character Poster">
-                <div class="gallery-caption">Word</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://github.com/Cylos404/portfolio/blob/main/poster5.png?raw=true" alt="Character Poster">
-                <div class="gallery-caption">Sentence</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://github.com/Cylos404/portfolio/blob/main/poster3.png?raw=true" alt="Character Poster">
-                <div class="gallery-caption">Paragraph</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://github.com/Cylos404/portfolio/blob/main/poster4.png?raw=true" alt="Character Poster">
-                <div class="gallery-caption">Page</div>
-            </div>
 
+    
 
-            
-        </div>
-    </section> -->
-
-
-    <style>
-/* Horizontal Scrollable Poster Section */
+<!-- Add this CSS to your existing styles -->
+<style>
+/* Poster Carousel Section */
 .poster-section {
     background: #0a0a0a;
-    padding: 5rem 0;
-    overflow: hidden;
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .poster-section h2 {
@@ -699,7 +672,6 @@
     margin-bottom: 3rem;
     color: #fff;
     position: relative;
-    padding: 0 2rem;
 }
 
 .poster-section h2::after {
@@ -713,126 +685,327 @@
     background: #ff6b6b;
 }
 
-.horizontal-scroll-container {
+.poster-carousel {
     position: relative;
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 2rem 0;
-}
-
-.horizontal-scroll-container::-webkit-scrollbar {
-    height: 8px;
-}
-
-.horizontal-scroll-container::-webkit-scrollbar-track {
-    background: #111;
-    border-radius: 4px;
-}
-
-.horizontal-scroll-container::-webkit-scrollbar-thumb {
-    background: #ff6b6b;
-    border-radius: 4px;
-}
-
-.horizontal-scroll-wrapper {
     display: flex;
-    gap: 2rem;
-    padding: 0 2rem;
-    width: max-content;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
-.poster-item {
-    flex-shrink: 0;
-    width: 350px;
-    height: 500px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease;
+.carousel-container {
     position: relative;
-    background: #111;
+    width: 400px;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-.poster-item:hover {
-    transform: scale(1.05);
+.poster-main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.3s ease;
 }
 
-.poster-item img {
+.poster-main:hover {
+    transform: scale(1.1);
+}
+
+.poster-main img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
 }
 
-.poster-item:hover img {
-    transform: scale(1.1);
-}
-
-.poster-caption {
+.poster-main-caption {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
     color: white;
-    padding: 2rem 1rem 1rem;
-    font-size: 1.1rem;
-    font-weight: 500;
+    padding: 3rem 1.5rem 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
     transform: translateY(100%);
     transition: transform 0.3s ease;
 }
 
-.poster-item:hover .poster-caption {
+.poster-main:hover .poster-main-caption {
     transform: translateY(0);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.carousel-arrow:hover {
+    background: #ff6b6b;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow.prev {
+    left: -80px;
+}
+
+.carousel-arrow.next {
+    right: -80px;
+}
+
+.poster-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    opacity: 0.6;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.thumbnail.active {
+    border-color: #ff6b6b;
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Loading indicator */
+.poster-main.loading {
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #333;
+    border-top: 3px solid #ff6b6b;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Mobile responsive */
 @media (max-width: 768px) {
-    .poster-item {
-        width: 280px;
-        height: 400px;
+    .carousel-container {
+        width: 300px;
+        height: 450px;
+    }
+    
+    .carousel-arrow.prev {
+        left: -50px;
+    }
+    
+    .carousel-arrow.next {
+        right: -50px;
+    }
+    
+    .carousel-arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .thumbnail {
+        width: 45px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-arrow.prev,
+    .carousel-arrow.next {
+        position: relative;
+        left: auto;
+        right: auto;
+        margin: 1rem 0.5rem 0;
+    }
+    
+    .poster-carousel {
+        flex-direction: column;
+    }
+    
+    .carousel-arrows-mobile {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
     }
 }
 </style>
 
-<!-- Add this HTML section after your illustration section -->
+<!-- Add this HTML section for the poster carousel -->
 <section id="poster" class="poster-section">
     <h2>Poster</h2>
-    <div class="horizontal-scroll-container">
-        <div class="horizontal-scroll-wrapper">
-            
-            <div class="poster-item">
-                <img src="https://github.com/Cylos404/portfolio/blob/main/poster2.jpg?raw=true" alt="Character Poster">
-                <div class="poster-caption">Character</div>
+    
+    <div class="poster-carousel">
+        <button class="carousel-arrow prev" onclick="previousPoster()">‹</button>
+        
+        <div class="carousel-container">
+            <div class="poster-main" id="mainPoster">
+                <img id="mainPosterImg" src="https://github.com/Cylos404/portfolio/blob/main/poster2.jpg?raw=true" alt="Character Poster">
+                <div class="poster-main-caption" id="mainPosterCaption">Character</div>
             </div>
-            
-            <div class="poster-item">
-                <img src="https://github.com/Cylos404/portfolio/blob/main/poster6.png?raw=true" alt="Word Poster">
-                <div class="poster-caption">Word</div>
-            </div>
-            
-            <div class="poster-item">
-                <img src="https://github.com/Cylos404/portfolio/blob/main/poster5.png?raw=true" alt="Sentence Poster">
-                <div class="poster-caption">Sentence</div>
-            </div>
-            
-            <div class="poster-item">
-                <img src="https://github.com/Cylos404/portfolio/blob/main/poster3.png?raw=true" alt="Paragraph Poster">
-                <div class="poster-caption">Paragraph</div>
-            </div>
-            
-            <div class="poster-item">
-                <img src="https://github.com/Cylos404/portfolio/blob/main/poster4.png?raw=true" alt="Page Poster">
-                <div class="poster-caption">Page</div>
-            </div>
-
-            <!-- Add more poster items here -->
-            
         </div>
+        
+        <button class="carousel-arrow next" onclick="nextPoster()">›</button>
+    </div>
+    
+    <div class="poster-thumbnails" id="posterThumbnails">
+        <!-- Thumbnails will be generated by JavaScript -->
     </div>
 </section>
+
+<!-- Add this JavaScript -->
+<script>
+// Poster data array
+const posters = [
+    {
+        src: "https://github.com/Cylos404/portfolio/blob/main/poster2.jpg?raw=true",
+        caption: "Character"
+    },
+    {
+        src: "https://github.com/Cylos404/portfolio/blob/main/poster6.png?raw=true",
+        caption: "Word"
+    },
+    {
+        src: "https://github.com/Cylos404/portfolio/blob/main/poster5.png?raw=true",
+        caption: "Sentence"
+    },
+    {
+        src: "https://github.com/Cylos404/portfolio/blob/main/poster3.png?raw=true",
+        caption: "Paragraph"
+    },
+    {
+        src: "https://github.com/Cylos404/portfolio/blob/main/poster4.png?raw=true",
+        caption: "Page"
+    }
+    // Add more posters here in the same format
+];
+
+let currentPosterIndex = 0;
+
+// Initialize the poster carousel
+function initPosterCarousel() {
+    generateThumbnails();
+    showPoster(0);
+}
+
+// Generate thumbnail images
+function generateThumbnails() {
+    const thumbnailContainer = document.getElementById('posterThumbnails');
+    thumbnailContainer.innerHTML = '';
+    
+    posters.forEach((poster, index) => {
+        const thumbnail = document.createElement('div');
+        thumbnail.className = 'thumbnail';
+        thumbnail.onclick = () => showPoster(index);
+        
+        const img = document.createElement('img');
+        img.src = poster.src;
+        img.alt = poster.caption;
+        
+        thumbnail.appendChild(img);
+        thumbnailContainer.appendChild(thumbnail);
+    });
+}
+
+// Show specific poster
+function showPoster(index) {
+    const mainImg = document.getElementById('mainPosterImg');
+    const mainCaption = document.getElementById('mainPosterCaption');
+    const mainPoster = document.getElementById('mainPoster');
+    
+    // Add loading state
+    mainPoster.classList.add('loading');
+    mainImg.style.opacity = '0';
+    
+    // Update active thumbnail
+    document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+    });
+    
+    // Load new image
+    const newImage = new Image();
+    newImage.onload = () => {
+        mainImg.src = posters[index].src;
+        mainCaption.textContent = posters[index].caption;
+        mainPoster.classList.remove('loading');
+        mainImg.style.opacity = '1';
+    };
+    newImage.src = posters[index].src;
+    
+    currentPosterIndex = index;
+}
+
+// Navigate to next poster
+function nextPoster() {
+    const nextIndex = (currentPosterIndex + 1) % posters.length;
+    showPoster(nextIndex);
+}
+
+// Navigate to previous poster
+function previousPoster() {
+    const prevIndex = (currentPosterIndex - 1 + posters.length) % posters.length;
+    showPoster(prevIndex);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') previousPoster();
+    if (e.key === 'ArrowRight') nextPoster();
+});
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', initPosterCarousel);
+</script>
+
+
 
     <!-- Lightbox for full-size images -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
