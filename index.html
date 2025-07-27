@@ -13,7 +13,7 @@
         }
 
         body {
-             font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif; 
+            font-family: 'Playfair Display', Georgia, serif;
             line-height: 1.6;
             color: #333;
             background: #0a0a0a;
@@ -114,14 +114,20 @@
         }
 
         .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            animation: bounce 2s infinite;
-        }
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    animation: bounce 2s infinite;
+    cursor: pointer; /* Add this */
+    transition: all 0.3s ease; /* Add this */
+}
 
+.scroll-indicator:hover {
+    color: #ff6b6b;
+    transform: translateX(-50%) scale(1.2);
+}
         /* Section Styles */
         .section {
             padding: 5rem 2rem;
@@ -465,9 +471,9 @@
             <h1>Ruoshui Liu</h1>
             <p>Graphic Designer & Visual Artist</p>
         </div>
-        <div class="scroll-indicator">
-            <div>↓</div>
-        </div>
+       <div class="scroll-indicator" onclick="scrollToIllustration()">
+        <div>↓</div>
+        </div>    
     </section>
 
 
@@ -998,6 +1004,14 @@ function createLightTrail(x, y) {
     light.style.top = y + 'px';
     
     setTimeout(() => light.remove(), 500);
+}
+
+    function scrollToIllustration() {
+    const illustrationSection = document.querySelector('#illustration');
+    illustrationSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
 }
 </script>
   <script>  
