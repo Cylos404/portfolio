@@ -924,16 +924,15 @@ const posters = [
     {
         src: "https://github.com/Cylos404/portfolio/blob/main/poster4.png?raw=true",
         caption: "Page"
-    }
+    },
     {
         src: "https://github.com/Cylos404/portfolio/blob/main/poster15.jpg?raw=true",
-        caption: "Page"
-    }
+        caption: "Inventory I"
+    },
     {
         src: "https://github.com/Cylos404/portfolio/blob/main/poster16.jpg?raw=true",
-        caption: "Page"
-    }
-   
+        caption: "Inventory II"
+    }   
 ];
 
 let currentPosterIndex = 0;
@@ -964,7 +963,7 @@ function generateThumbnails() {
 }
 
 // Show specific poster
-function showPoster(index) {
+    function showPoster(index) {
     const mainImg = document.getElementById('mainPosterImg');
     const mainCaption = document.getElementById('mainPosterCaption');
     const mainPoster = document.getElementById('mainPoster');
