@@ -68,13 +68,13 @@
 
 
 /* Hero Section */
-       .hero {
+    .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #2A7B9B;
+/*     background: #2A7B9B; */
 background: radial-gradient(circle,rgba(42, 123, 155, 1) 0%, rgba(0, 127, 230, 1) 50%, rgba(0, 0, 0, 1) 100%);
     position: relative;
     overflow: hidden;
@@ -1307,7 +1307,6 @@ function createRipple(e) {
 }
 
         document.addEventListener('DOMContentLoaded', function() {
-    // ADD THESE LINES to your existing DOMContentLoaded:
     createParticles();
     
     const hero = document.querySelector('.hero');
