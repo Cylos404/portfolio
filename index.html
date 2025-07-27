@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: 'Acumin', sans-serif;
+             font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif; 
             line-height: 1.6;
             color: #333;
             background: #0a0a0a;
@@ -966,9 +966,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function createFirework(x, y) {
+    const colors = ['#ffd700', '#00bfff', '#ff69b4', '#00ff88', '#ff8c00', '#9146ff'];
+    
     for (let i = 0; i < 12; i++) {
         const particle = document.createElement('div');
         particle.className = 'firework-particle';
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)]; // Random color
         document.body.appendChild(particle);
         
         const angle = (i / 12) * Math.PI * 2;
